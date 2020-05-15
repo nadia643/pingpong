@@ -1,5 +1,6 @@
 let playerPaddle;
 let computerPaddle;
+let ballThing;
 
 function setup() {
   createCanvas(1500, 750);
@@ -13,6 +14,7 @@ function draw() {
   playerPaddle.display();
   computerPaddle.display();
   ballThing.display();
+  ballThingTwo.display();
 
   if(playerPaddle.isUp) {
       playerPaddle.up();
@@ -29,6 +31,7 @@ function keyPressed() {
         playerPaddle.isDown = true;
     }
 }
+
  
 function keyReleased() {
     if (keyCode == UP_ARROW) {
