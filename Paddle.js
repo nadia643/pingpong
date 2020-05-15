@@ -32,6 +32,9 @@ class Paddle {
         this.y = (1500 - height) / 2;
         this.height = 80;
         this.width = 20;
+
+        this.isUp = false;
+        this.isDown = false;
     }
 
     display() {
