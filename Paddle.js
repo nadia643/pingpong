@@ -1,30 +1,3 @@
-// const canvas = document.getElementById('canvas');
-// const ctx = canvas.getContext('2d');
-
-// const canvasWidth = 1000;
-// const canvasHeight = 750;
-// const paddleWidth = 50;
-// const paddleHeight = 150;
-
-// const paddleLeftX = 10;
-// const paddleRightX = canvasWidth - paddleWidth - 10;
-// const centreLineX = canvasWidth / 2;
-// const y = (canvasHeight - paddleHeight) / 2;
-
-
-// ctx.fillStyle = "white";
-// // paddle left and right 
-// const leftPaddle = ctx.fillRect(paddleLeftX, y, paddleWidth, paddleHeight);
-// const rightPaddle = ctx.fillRect(paddleRightX, y, paddleWidth, paddleHeight);
-// // centre line
-// const centreLine = ctx.fillRect(centreLineX, 0, 5, canvasHeight)
-
-// document.addEventListener('click', movePaddle);
-
-// function movePaddle() {
-//     console.log("clicked");   
-// }
-
 class Paddle {
     // only the x position of the paddle will change 
     constructor(x) {
@@ -42,12 +15,17 @@ class Paddle {
         rect(this.x, this.y, this.width, this.height)
     }
 
+    //the x and y represent the top left of the paddle, so we take away the height to constrain it
     up() {
+        if(this.y > 0) {
         this.y -=2;
     }
+}
 
     down() {
+        if(this.y < height - this.height) {
         this.y +=2;
+        }
     }
 }
 

@@ -1,17 +1,18 @@
 let playerPaddle;
 let computerPaddle;
- 
+
 function setup() {
   createCanvas(1500, 750);
-//   createCanvas(624, 315);
   playerPaddle = new Paddle(10);
   computerPaddle = new Paddle(1500 - 30);
+  ballThing = new Ball();
 }
- 
+
 function draw() {
   background(0);
   playerPaddle.display();
   computerPaddle.display();
+  ballThing.display();
 
   if(playerPaddle.isUp) {
       playerPaddle.up();
@@ -36,3 +37,4 @@ function keyReleased() {
         playerPaddle.isDown = false;
     }
 }
+
