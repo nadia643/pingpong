@@ -45,6 +45,18 @@ class Ball{
           }
         }
       }
+           
+      hasHitAi(ai) {
+        if (this.x + this.r >= ai.x && this.x <= ai.x + ai.width) {
+          if (this.isSameHeight(ai)) {
+            this.xSpeed = -this.xSpeed;
+          }
+        }
+      }
+               
+      isSameHeight(player) {
+        return this.y >= player.y && this.y <= player.y + player.height
+      }
 
 
 }

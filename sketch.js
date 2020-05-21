@@ -8,6 +8,7 @@ function setup() {
   playerPaddle = new Paddle(10);
   computerPaddle = new Paddle(1500 - 30);
   ball = new Ball();
+  
 
 }
 
@@ -24,6 +25,11 @@ function draw() {
 
   ball.update();
   ball.display();
+  ball.hasHitPlayer(playerPaddle); 
+  ball.hasHitAi(computerPaddle); 
+
+  stroke(255);
+  line(width/2, 0, width/2, height);
 }
 
 function processAI() {
