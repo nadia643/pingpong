@@ -1,5 +1,5 @@
 class Paddle {
-    // only the x position of the paddle will change 
+    // only the x position of the paddle will change
     constructor(x) {
         this.x = x;
         this.y = (1500 - height) / 2;
@@ -10,6 +10,15 @@ class Paddle {
         this.isDown = false;
     }
 
+
+    update() {
+        if (this.isUp) {
+          this.up();
+        } else if (this.isDown) {
+          this.down();
+        }
+      }
+    
     display() {
         fill(255);
         rect(this.x, this.y, this.width, this.height)

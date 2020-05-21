@@ -1,32 +1,50 @@
- 
-class Ball {
-    // only the x position of the paddle will change 
-    constructor(bx) {
-        // ball starts in a different place each time
-        this.bx = Math.floor(Math.random() * 1500);
-        this.by = (1500 - height) / 2;
-        this.height = 30;
-        this.width = 15;
+class Ball{
+    constructor() {
+        this.r = 10; // r = radius
+        this.reset();
+    }
 
-        this.isUp = false;
-        this.isDown = false;
+    update() {
+        // if it hits the top or bottom change direction
+        if (this.y < this.r || this.y > height - this.r) {
+            this.ySpeed = -this.ySpeed;
+        }
+        // if it goes to the end of the sreen restart the game
+        if (this.x < this.r || this.x > width + this.r) {
+            this.reset();
+        }
+
+        this.x += this.xSpeed;
+        this.y += this.ySpeed;
+
+    }
+
+    reset() {
+        this.x = width/2;
+        this.y = height/2;
+
+        this.xSpeed = random(3, 4);
+
+        // determines if it's going left or right
+        let isLeft = random(1) > .5;
+        if (isLeft) {
+            this.xSpeed = -this.xSpeed;
+        }
+
+        this.ySpeed = random(-3, 3);
     }
 
     display() {
-        fill("red");
-        circle(this.bx, this.by, this.width, this.height)
+        ellipse(this.x, this.y, this.r * 2, this.r * 2);
     }
 
-    //the x and y represent the top left of the paddle, so we take away the height to constrain it
-    up() {
-        if(this.y > 0) {
-        this.y -=2;
-    }
-}
-
-    down() {
-        if(this.y < height - this.height) {
-        this.y +=2;
+    hasHitPlayer(player) {
+        if (this.x - this.r <= player.x + player.width && this.x > player.x) {
+          if (this.isSameHeight(player)) {
+            this.xSpeed = -this.xSpeed;
+          }
         }
-    }
+      }
+
+
 }
