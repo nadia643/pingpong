@@ -2,7 +2,7 @@ class Paddle {
     // only the x position of the paddle will change
     constructor(x) {
         this.x = x;
-        this.y = (1500 - height) / 2;
+        this.y = (1000 - height) / 2;
         this.height = 80;
         this.width = 20;
 
@@ -27,13 +27,13 @@ class Paddle {
     //the x and y represent the top left of the paddle, so we take away the height to constrain it
     up() {
         if(this.y > 0) {
-        this.y -=2;
+        this.y -=3;
     }
 }
 
     down() {
         if(this.y < height - this.height) {
-        this.y +=2;
+        this.y +=3;
         }
     }
 }

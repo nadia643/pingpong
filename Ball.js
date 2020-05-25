@@ -17,6 +17,7 @@ class Ball{
         this.x += this.xSpeed;
         this.y += this.ySpeed;
 
+
     }
 
     reset() {

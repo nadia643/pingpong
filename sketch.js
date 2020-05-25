@@ -4,9 +4,9 @@ let ball;
 
 
 function setup() {
-  createCanvas(1500, 750);
+  createCanvas(1000, 500);
   playerPaddle = new Paddle(10);
-  computerPaddle = new Paddle(1500 - 30);
+  computerPaddle = new Paddle(1000 - 30);
   ball = new Ball();
   
 
