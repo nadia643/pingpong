@@ -1,7 +1,7 @@
 {
   "name": "pingpong",
   "version": "1.0.0",
-  "description": "",
+  "description": "//npm run compile:sass",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,5 +14,13 @@
   },
   "devDependencies": {
     "node-sass": "^4.14.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nadia643/pingpong.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nadia643/pingpong/issues"
+  },
+  "homepage": "https://github.com/nadia643/pingpong#readme"
 }
